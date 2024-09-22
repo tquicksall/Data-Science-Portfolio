@@ -24,4 +24,28 @@ The histogram shows us that the distribution of the charge times is also roughly
 
 My initial interpretation of the scatter is that there is little to no correlation between how far the charging station is from the user, and how much the user ends up spending. A few of the largest sales do take place at short distances, but there is still very little correlation. This will be helpful to know later on when considering whether to include distance as a variable in the model or not. If indeed distance plays no role, the company installing these stations will not have to consider placement too much.
 
-# Identify Outliers
+# Thought process on model selection
+The goal of my model is to determine what factors of electric vehicle charging stations lead to to the highest amount of energy usage (most use from station). Given this approach, the kwhTotal is my target variable, and the others are the determining.
+
+Since the kWh is the target and it is numerical, not categorical I am going to use regression algorithms for my model. As identified earlier in my exploratory data analysis, there is a linear relationship between some variables, but not all. Therefore, I will consider a linear regression model, and a random forest regressor and comparing the results to see which yiedls a better result. I will see which one yields a better result by comparing the values for R2, root mean squared error (RMSE), and mean absolute error (MAE). For each model I will compare these values on the training and test set to make sure there is no major gap that would indicate overfitting.
+
+# Random Forest Regressor Analysis
+
+The R2 for the test and train set are both .99. Given both values are in close range I can assume overfitting isn't a major issue. The RMSE and MAE values are also very small (~.25 & ~.2 for the test set) meaning, when the model did make an incorrect prediction, the magnitude of the error was small. Similarly we do see smaller RMSE and MAE values for the train set which is expected since the model should perform better on the data it was trained with.
+
+# Linear Regression Analysis
+
+The R2 value for the test and train set are both .98. Given both values are in close range I can assume overfitting isn't a major issue for this model either. The RMSE and MAE values are also very small (~.07 & ~.2 for the test set). This is interesting because while the R2 value is slightly smaller, the RMSE and MAE values are smaller as well. This could mean that there is some overfitting in the Random Forest Regressor, because the Linear Regression model, when incorrect, had a smaller magnitude of error. This could mean that the Linear Regression Model may perform better at scale. Given this analysis I think it would be best to use a pipeline with a grid search to find the best model/parameters.
+
+# Analysis After Pipeline and Grid Search
+
+Overall I am satisfied with the results, with the R2 value being .98 for the test set. Given my suspicions that the original Random Forest Regressor was possibly over-fit (.99 R2 value), I feel more confident in the new model at scale. Additionally with the new model the RMSE and MAE values are still relatively small (.29 and .2), meaning there was not much of an increase in error magnitude.
+
+
+# Feature Performance
+
+<img width="617" alt="Screenshot 2024-09-22 at 1 02 45 PM" src="https://github.com/user-attachments/assets/ca6fb9e3-9321-4245-9152-4d121b80a1e2">
+
+<img width="538" alt="Screenshot 2024-09-22 at 1 02 48 PM" src="https://github.com/user-attachments/assets/b894d72b-2636-47ec-968f-684e1e386d0a">
+
+While there is a positive correlation with charge time and kWh, which would seem obvious given the more time spent charging the more energy used, we do actually see most of the highest energy usage take place below the middle value (4 hours). This would indicate most customers mat prefer to use stations that charge at a faster rate.
