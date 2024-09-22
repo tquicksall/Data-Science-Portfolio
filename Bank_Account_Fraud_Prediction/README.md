@@ -14,5 +14,25 @@ Next all that was left to do was split the dataset into test and train sets and 
 Since the outcome variable is binary (either fraud or not), I used logistic regression, as it will provide the best results. Logistic regression determines the dependent variable based off the relationship between all the independent variables. Many of the independent variables are categorical, therefore those will need to be converted to dummy variables in order to fit the qualitative data into the regression.
 First, I looked at the F1 score. The F1 score can be interpreted as the mean of precision and recall. Recall is how often the model correctly identifies positive instances. In our case how often a fraudulent transaction was detected (or non-fraudulent). Therefore, the closer to 1 the F1 score, the better. This model has a great F1 score at .98.
 
+<img width="349" alt="Screenshot 2024-09-22 at 12 51 46 PM" src="https://github.com/user-attachments/assets/14e1240d-b040-46f9-a41b-760509dc2ce0">
 
+The confusion matrix shows us the predicted true and false values versus the actual true and false values. The top left tells us the correct true predictions, the top right shows us false positives, the bottom left shows us false negatives, and the bottom right shows us true negatives. As we can see our largest number is where we want in, in the top left under true positive predictions.
+
+<img width="368" alt="Screenshot 2024-09-22 at 12 52 26 PM" src="https://github.com/user-attachments/assets/57f6b253-8a9d-4683-aba2-be7c8b126de6">
+
+The ROC curve shows us the rate a model predicts the true outcome correctly versus incorrectly. The more area under the curve the better. As we can see based off the ROC-Curve the model performed well.
+Cross-validation is useful to estimate the success of a machine learning model on unseen data. This means to use a limited sample in order to measure how the model is expected to perform on data not used to train the model. During cross-validation the model performed well, holding an accuracy of 98%.
+
+# Conclusion
+The goal of this project was to build a model that could predict whether a transaction is fraudulent. The interpretation of my results shows that the model performs very well in doing that. The model accuracy (normal and standardized), and F1 Score are both .98. With an accuracy of 98%, and cross-validation having similar results, I feel this model can predict a
+fraudulent transaction given the appropriate metrics. With all the various analysis done, I also feel confident the model is not overfit, and will perform well on live data.
+Given that most all the metrics in the dataset are available at the time of the transaction, this model could be implemented to predict fraud on a transaction-by-transaction basis. Banks could use this model as a part of their payment processing pipeline to reduce overall levels of fraudulent transactions.
+
+# References
+Fraud facts and statistics. John Marshall Bank. (2024, March 12). https://www.johnmarshallbank.com/resources/security-center/fraud-facts-and- statistics/
+Bennett, K. (n.d.). 5 common types of bank account fraud and how to protect yourself. Bankrate. https://www.bankrate.com/banking/common-types-of-bank-account-fraud/
+Assumptions of logistic regression. Statistics Solutions. (2024, April 17). https://www.statisticssolutions.com/free-resources/directory-of-statistical- analyses/assumptions-of-logistic-regression/
+How to evaluate a logistic regression model?. Tutorialspoint. (n.d.). https://www.tutorialspoint.com/how-to-evaluate-a-logistic-regression-model
+
+# Data Access
 data downloaded from - https://www.kaggle.com/datasets/sgpjesus/bank-account-fraud-dataset-neurips-2022
