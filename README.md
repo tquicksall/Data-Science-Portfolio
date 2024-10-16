@@ -1,1 +1,9 @@
-## Data Science Portfolio
+# Data Science Portfolio
+
+## About
+
+## Work/Projects
+
+## Contact
+
+
