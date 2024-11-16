@@ -5,6 +5,9 @@ I am Software engineer with 8+ years of experience developing and deploying cust
 
 ### Work/Projects
 
+### ALS Analysis Using K Means Clustering
+[https://github.com/tquicksall/Data-Science-Portfolio/tree/main/ALS_Analysis_using_KMeans]
+
 ### Education 
 
 ### Contact
