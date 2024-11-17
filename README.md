@@ -1,4 +1,3 @@
-# Troy Quicksall
 # Data Science Portfolio
 
 ## About
