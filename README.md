@@ -6,11 +6,9 @@ I am Software engineer with 8+ years of experience developing and deploying cust
 ## Work/Projects
 
 <h3><a href="https://github.com/tquicksall/Data-Science-Portfolio/tree/main/ALS_Analysis_using_KMeans">ALS Analysis Using K Means Clustering</a></h3>
-### ALS Analysis Using K Means Clustering
 A project that analyzes the bloodwork of patients with ALS and utilizes the K-means clustering algorithm to predict ALS in patients. This project utilizes standard scalars, silhouette score, and PCA transformations to optimize model performance. 
 
 <h3><a href="[https://github.com/tquicksall/Data-Science-Portfolio/tree/main/ALS_Analysis_using_KMeans](https://github.com/tquicksall/Data-Science-Portfolio/tree/main/ARIMA_retail_sales_predictor)">Time Series Analysis with ARIMA Model</a></h3>
-### Time Series Analysis with ARIMA Model
 A project that analyzes observed retail sales over time to predict future sales. This project utilizes the ARIMA model to make predictions and generates visualizations to observe the resulting model’s performance.
 
 <h3><a href="https://github.com/tquicksall/Data-Science-Portfolio/tree/main/Bank_Account_Fraud_Prediction">Bank Account Fraud Prediction</a></h3>
